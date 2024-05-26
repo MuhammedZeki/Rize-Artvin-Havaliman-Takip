@@ -1,0 +1,4 @@
+<option value="-1" selected>Seçiniz</option>
+<% flights.forEach(flight => { %>
+    <option value="<%= flight.idflights %>"><%= flight.flight_number %></option>
+<% }) %>

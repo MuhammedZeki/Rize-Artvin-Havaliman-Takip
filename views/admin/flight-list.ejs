@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+   
+</head>
+<body>
+       
+    <%- include('../partials/nav') %>
+
+    <div class="container mt-3">
+        
+        <table class="table table-bordered table-striped align-items-center ">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">#id</th>
+                    <th>Şirket İsim</th>
+                    <th>Şirket Logosu</th>                    
+                    <th>Ülke</th>
+                    <th>Kalkış</th>
+                    <th>İniş</th>
+                    <th>Flight Number</th>
+                    <th style="width: 150px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% flights.forEach(flight => { %>
+                    <tr>
+                        <td><%= flight.idflights %></td>
+                        <td><%= flight.name %></td>
+                        <td>
+                            <img src="/static/images/<%= flight.resim %>" class="img-fluid" alt="">
+                        </td>
+                        <td><%= flight.country %></td>
+                        <td><%= flight.origin %></td>
+                        <td><%= flight.destination %></td>
+                        <td><%= flight.flight_number %></td>
+                        <td>
+                            <a href="/admin/flight/<%= flight.idflights %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/admin/flight/delete/<%= flight.idflights %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

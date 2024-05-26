@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>   
+</head>
+<body>       
+    <%- include('../partials/nav') %>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <div class="alert alert-warning">
+                    <p></p>
+                    <p>
+                        <b><%= flights.name %> <img src="/static/images/<%= flights.resim %>"> </b> <br>
+                         <b><%= flights.origin %></b> ----- > <b> <%= flights.destination %></b>
+                          <br> Uçuşu Silmek İstiyor musunuz?
+                    </p>
+                    <form method="post">
+                        <input type="hidden" name="id" id="id" value="<%=flights.idflights%>">
+                        <button type="submit" class="btn btn-danger">Evet</button>
+                        <a href="/admin/flight" class="btn btn-primary">Hayır</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

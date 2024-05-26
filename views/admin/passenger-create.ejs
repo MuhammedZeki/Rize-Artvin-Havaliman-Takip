@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+   
+</head>
+<body>
+       
+    <%- include('../partials/nav') %>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <form method="post">
+                    <div class="row mb-3">
+                        <label for="first_name" class="col-sm-2 col-form-label">Yolcu Adı</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="last_name" class="col-sm-2 col-form-label">Yolcu Soyadı</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="nationality" class="col-sm-2 col-form-label">Uyruk</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nationality" name="nationality">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="nationality" class="col-sm-2 col-form-label">Uçuş No</label>
+                        <div class="col-sm-8">
+                            <select name="flight_number" id="flight_number" class="form-select">
+                                <%- include('./partials/passenger-category',flights) %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-8 offset-sm-2">
+                          <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

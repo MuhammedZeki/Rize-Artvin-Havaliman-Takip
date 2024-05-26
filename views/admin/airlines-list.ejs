@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+   
+</head>
+<body>
+       
+    <%- include('../partials/nav') %>
+
+    <div class="container mt-3">
+        
+        <table class="table table-bordered table-striped align-items-center ">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">#id</th>
+                    <th>Şirket İsim</th>
+                    <th>Şirket Logosu</th>                    
+                    <th>Ülke</th>
+                    <th>ICAO</th>
+                    <th>IATA</th>
+                    <th style="width: 150px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% airlines.forEach(air => { %>
+                    <tr>
+                        <td><%= air.idairlines %></td>
+                        <td><%= air.name %></td>
+                        <td>
+                            <img src="/static/images/<%= air.resim %>" class="img-fluid" alt="">
+                        </td>
+                        <td><%= air.country %></td>
+                        <td><%= air.icao %></td>
+                        <td><%= air.iata %></td>
+                        <td>
+                            <a href="/admin/airlines/<%=  air.idairlines  %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/admin/airlines/delete/<%=  air.idairlines  %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

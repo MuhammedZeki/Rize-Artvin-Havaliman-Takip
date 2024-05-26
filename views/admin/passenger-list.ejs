@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+   
+</head>
+<body>
+       
+    <%- include('../partials/nav') %>
+
+    <div class="container mt-3">
+        
+        <table class="table table-bordered table-striped align-items-center ">
+            <thead>
+                <tr>
+                    <th style="width: 50px;">#id</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>                    
+                    <th>Uyruk</th>
+                    <th>Flight Number</th>
+                    <th style="width: 150px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% passengers.forEach(passenger => { %>
+                    <tr>
+                        <td><%= passenger.idpassenger %></td>
+                        <td><%= passenger.first_name %></td>
+                        <td><%= passenger.last_name %></td>
+                        <td><%= passenger.nationality %></td>
+                        <td><%= passenger.flight_number %></td>
+                        <td>
+                            <a href="/admin/passenger/<%= passenger.idpassenger %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="/admin/passenger/delete/<%= passenger.idpassenger %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
